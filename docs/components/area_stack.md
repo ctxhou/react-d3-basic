@@ -6,7 +6,7 @@ Whenever you need to build a area stack chart. `AreaStack Component` is where yo
 
 ### Basic Props
 
-- dataset
+- data
 - areaClassName
 - areaOpacity
 - duration

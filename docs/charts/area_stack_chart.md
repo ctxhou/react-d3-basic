@@ -112,23 +112,137 @@ var AreaStackChart = require('react-d3-basic').AreaStackChart;
 
 ## Settings
 
-### Basic Settings
+### Required Settings
+
+#### data
+
+- type: `array of object`
+
+each object has same key
+
+example:
+
+    [{
+      "date": "04/23/12",
+      "Group1": "-20",
+      "Group2": "12",
+      "Group3": "46"
+    }, {
+      "date": "04/24/12",
+      "Group1": "32",
+      "Group2": "-20",
+      "Group3": "24"
+    }]
+
+#### x
+
+- type: `function`
+
+parsed data function
+
+#### chartSeries
+
+- type: `array of object`
+
+- field: `required`, define the data field
+- name: `optional`, the show name of this data. default is the same with field.
+
+example:
+
+    [{
+      field: "Group1",
+      name: "Group 1"
+    },
+    {
+      field: "Group2",
+      name: "Group 2"
+    }]
+
+
+### Optional Settings
+
+#### title
+
+- type: string
+
+the title of the graph
+
+#### width
+
+- type: int
+
+- default: `960`
+
+the width of the graph
+
+#### height
+
+- type: int
+
+- default: `500`
+
+the height of the graph
+
+#### xScale
+
+- type: boolean
+
+- default: `true`
+
+#### yScale
+
+- type: boolean
+
+- default: `true`
+
+#### y
+
+- type: function
+
+- default: `y: (d) => {return +d;}`
+
+
+#### margins
+
+- type: object
+
+- default: `{top: 80, right: 100, bottom: 80, left: 100}`
+
+margins of the graph
+
+#### xDomain
+
+reference [react-d3-core](https://github.com/react-d3/react-d3-core)
+
+#### yDomain
+
+reference [react-d3-core](https://github.com/react-d3/react-d3-core)
 
 - interpolate
-- chartSeries
-- data
-- xDomain
-- yDomain
-- x
-- y
-- categoricalColors
-
 
 ### Show Implements
 
-- showXGrid
-- showYGrid
-- showLegend
+#### interpolate
+
+please reference d3 interpolate
+
+#### showXGrid
+
+- type: boolean
+
+- default: `true`
+
+#### showYGrid
+
+- type: boolean
+
+- default: `true`
+
+#### categoricalColors
+
+- default:  `d3.scale.category10()`
+
+you must send one of the d3 categorical colors. [reference](https://github.com/mbostock/d3/wiki/Ordinal-Scales#categorical-colors)
 
 ----
 
