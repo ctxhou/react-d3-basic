@@ -1,6 +1,162 @@
-## Bar Chart Example
+# Bar Chart Example
 
-```js
+Bar chart combines the `components/bar` and `x, y -axis`.
+
+
+## Required Props
+
+### data
+
+reference [series]()
+
+### x
+
+reference [series]()
+
+### y
+
+#### chartSeries
+
+reference [series]()
+
+## Appearance Props (optional)
+
+### title
+
+- type: string
+
+the title of the graph
+
+### width
+
+- type: int
+- default: `960`
+
+the width of the graph
+
+### height
+
+- type: int
+- default: `500`
+
+the height of the graph
+
+### xScale
+
+- type: boolean
+- default: `true`
+
+### yScale
+
+- type: boolean
+- default: `true`
+
+### margins
+
+- type: object
+- default: `{top: 80, right: 100, bottom: 80, left: 100}`
+
+margins of the graph
+
+### id
+
+- type: stirng
+
+
+- default : `null`
+
+## X axis props (optional)
+
+### xDomain
+
+### xRangeRoundBands
+
+### xScale
+
+### xOrient
+
+### xTickOrient
+
+### xLabel
+
+## Y axis props (optional)
+
+### y
+
+### yOrient
+
+### yRange
+
+### yDomain
+
+### yScale
+
+### yTickOrient
+
+### yTicks
+
+### yLabel
+
+### yLabelPosition
+
+
+
+## Show Props (optional)
+
+### interpolate
+
+please reference d3 interpolate
+
+### showXGrid
+
+- type: boolean
+- default: `true`
+
+### showYGrid
+
+- type: boolean
+- default: `true`
+
+### categoricalColors
+
+reference [series]()
+
+## Class Props (optional)
+
+### svgClassName
+
+- type: string
+- default: `null`
+
+### titleClassName
+
+- type: string
+- default: `null`
+
+### yAxisClassName
+
+- type: string
+- default: `null`
+
+### xAxisClassName
+
+- type: string
+- default: `null`
+
+### legendClassName
+
+- type: string
+- default: `null`
+
+
+
+
+
+## Example code
+
+
+
+``` js
 "use strict";
 
 var React = require('react');
@@ -100,49 +256,3 @@ var BarChart = require('react-d3-basic').BarChart;
 })()
 ```
 
-## Settings
-
-### Basic Settings
-
-- interpolate
-- chartSeries
-- data
-- xDomain
-- yDomain
-- x
-- y
-- categoricalColors
-
-
-### Show Implements
-
-- showXGrid
-- showYGrid
-- showLegend
-
----
-
-## Components
-
-### Plotting
-
-- Bar
-
-### Core
-
-#### Container
-
-- Chart
-
-#### Axis
-
-- Xaxis
-- Yaxis
-
-#### Grid
-
-- Grid
-
-#### Legend
-
-- legend
