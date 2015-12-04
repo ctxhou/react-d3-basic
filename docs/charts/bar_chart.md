@@ -7,17 +7,52 @@ Bar chart combines the `components/bar` and `x, y -axis`.
 
 ### data
 
-reference [series]()
+- type: `array of object`
 
-### x
+each object has same key
 
-reference [series]()
+example:
 
-### y
+    [{
+      "date": "04/23/12",
+      "Group1": "-20",
+      "Group2": "12",
+      "Group3": "46"
+    }, {
+      "date": "04/24/12",
+      "Group1": "32",
+      "Group2": "-20",
+      "Group3": "24"
+    }]
+
+
+
+#### x
+
+- type: `function`
+
+parsed data function
 
 #### chartSeries
 
-reference [series]()
+- type: `array of object`
+- field: `required`, define the data field
+- name: `optional`, the show name of this data. default is the same with field.
+- color: `optional`, show categorical color
+
+example:
+
+    [{
+      field: "Group1",
+      name: "Group 1",
+      color: "red"
+    },
+    {
+      field: "Group2",
+      name: "Group 2",
+      color: "black"
+    }]
+
 
 ## Appearance Props (optional)
 
@@ -41,15 +76,6 @@ the width of the graph
 
 the height of the graph
 
-### xScale
-
-- type: boolean
-- default: `true`
-
-### yScale
-
-- type: boolean
-- default: `true`
 
 ### margins
 
@@ -62,7 +88,6 @@ margins of the graph
 
 - type: stirng
 
-
 - default : `null`
 
 ## X axis props (optional)
@@ -72,6 +97,10 @@ margins of the graph
 ### xRangeRoundBands
 
 ### xScale
+
+- type: boolean
+- default: `true`
+
 
 ### xOrient
 
@@ -83,6 +112,11 @@ margins of the graph
 
 ### y
 
+- type: function
+
+- default: `y: (d) => {return +d;}`
+
+
 ### yOrient
 
 ### yRange
@@ -90,6 +124,9 @@ margins of the graph
 ### yDomain
 
 ### yScale
+
+- type: boolean
+- default: `true`
 
 ### yTickOrient
 
@@ -119,7 +156,9 @@ please reference d3 interpolate
 
 ### categoricalColors
 
-reference [series]()
+- default:  `d3.scale.category10()`
+
+you must send one of the d3 categorical colors. [reference](https://github.com/mbostock/d3/wiki/Ordinal-Scales#categorical-colors)
 
 ## Class Props (optional)
 
